@@ -219,6 +219,24 @@ p { color: var(--ink-soft); }
 }
 
 /* =========================================================
+   VALUE PANEL (3-column, flat — no icon circles/hover lift)
+   ========================================================= */
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.value-item {
+  padding: 0 1.8rem;
+  border-left: 1px solid var(--stone-light);
+  border-top: 3px solid var(--rust);
+  padding-top: 1.2rem;
+}
+.value-item:first-child { border-left: none; }
+.value-item i { font-size: 1.5rem; color: var(--ink); margin-bottom: 0.8rem; display: block; }
+.value-item h3 { margin-bottom: 0.5rem; }
+.value-item p { font-size: 0.95rem; margin: 0; }
+
+/* =========================================================
    FOOTER
    ========================================================= */
 .site-footer { background: var(--ink); color: var(--stone-light); padding: 3.5rem 0 0; }

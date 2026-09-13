@@ -237,6 +237,101 @@ p { color: var(--ink-soft); }
 .value-item p { font-size: 0.95rem; margin: 0; }
 
 /* =========================================================
+   CARD GRID (exercises / meals / featured previews)
+   ========================================================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.8rem;
+}
+
+.card {
+  position: relative;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image { position: relative; height: 190px; overflow: hidden; border-bottom: 2px solid var(--ink); }
+.card-image img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Rubber-stamp style category tag */
+.card-stamp {
+  position: absolute;
+  top: 10px;
+  right: -6px;
+  background: var(--paper);
+  border: 2px solid var(--rust);
+  color: var(--rust);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.25rem 0.6rem;
+  transform: rotate(-6deg);
+}
+
+.card-body { padding: 1.3rem; display: flex; flex-direction: column; flex: 1; }
+.card-title { margin-bottom: 0.4rem; }
+.card-text { font-size: 0.92rem; margin-bottom: 0.6rem; }
+.card-meta { font-family: var(--font-display); color: var(--rust); font-size: 1.3rem; }
+
+/* Difficulty dots */
+.difficulty {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--stone);
+  font-weight: 600;
+}
+.difficulty .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--stone-light);
+  display: inline-block;
+}
+.difficulty .dot.filled { background: var(--ink); }
+
+/* Expand / collapse toggle */
+.details-toggle {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--stone-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--rust);
+}
+.details-toggle i { transition: transform var(--transition); }
+.card.expanded .details-toggle i { transform: rotate(180deg); }
+
+.card-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.card.expanded .card-details { max-height: 640px; margin-top: 0.9rem; }
+
+.card-details h4 {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--stone);
+  margin-top: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+.card-details h4:first-child { margin-top: 0; }
+.card-details ol, .card-details ul.plain { padding-left: 1.15rem; font-size: 0.9rem; color: var(--ink-soft); }
+.card-details li { margin-bottom: 0.3rem; }
+.card-details p { font-size: 0.9rem; margin-bottom: 0; }
+
+/* =========================================================
    FOOTER
    ========================================================= */
 .site-footer { background: var(--ink); color: var(--stone-light); padding: 3.5rem 0 0; }

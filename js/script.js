@@ -69,6 +69,20 @@ filterButtons.forEach(function (btn) {
 });
 
 /* ---------------------------------------------------------
+   3. CARD EXPAND / COLLAPSE
+   Each exercise/meal card has a "details-toggle" button.
+   Clicking it toggles an "expanded" class on the parent
+   card, which CSS uses to animate max-height from 0 to
+   its full content height.
+--------------------------------------------------------- */
+document.querySelectorAll(".details-toggle").forEach(function (toggle) {
+  toggle.addEventListener("click", function () {
+    const card = toggle.closest(".card");
+    card.classList.toggle("expanded");
+  });
+});
+
+/* ---------------------------------------------------------
    5. ANIMATED STAT COUNTERS (Home page)
    Each stat number carries a data-target (the final value)
    and an optional data-suffix (e.g. "+" or "%"). An

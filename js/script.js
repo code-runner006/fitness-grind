@@ -38,3 +38,50 @@ if (hamburger) {
     });
   });
 }
+
+/* ---------------------------------------------------------
+   5. ANIMATED STAT COUNTERS (Home page)
+   Each stat number carries a data-target (the final value)
+   and an optional data-suffix (e.g. "+" or "%"). An
+   IntersectionObserver watches the stats strip and starts
+   the count-up animation the first time it scrolls into
+   view, so it only plays once per page visit.
+--------------------------------------------------------- */
+const statNumbers = document.querySelectorAll(".stat-number");
+
+function animateCounter(el) {
+  const target = parseInt(el.getAttribute("data-target"), 10);
+  const suffix = el.getAttribute("data-suffix") || "";
+  const duration = 1200; // ms
+  const startTime = performance.now();
+
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const value = Math.floor(progress * target);
+    el.textContent = value + suffix;
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      el.textContent = target + suffix;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+if (statNumbers.length) {
+  const counterObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 },
+  );
+
+  statNumbers.forEach(function (num) {
+    counterObserver.observe(num);
+  });
+}

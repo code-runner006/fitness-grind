@@ -40,6 +40,35 @@ if (hamburger) {
 }
 
 /* ---------------------------------------------------------
+   2. FILTER BUTTONS
+   Used on Exercises page (by muscle group) and Meals page
+   (by meal category). Every filterable card carries a
+   data-category attribute in the HTML. Clicking a filter
+   button compares its data-filter value against each card's
+   data-category and shows/hides cards by toggling a class
+   (no elements are removed from the DOM, just hidden).
+--------------------------------------------------------- */
+const filterButtons = document.querySelectorAll(".filter-btn");
+const filterCards = document.querySelectorAll("[data-category]");
+
+filterButtons.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    filterButtons.forEach(function (b) {
+      b.classList.remove("active");
+    });
+    btn.classList.add("active");
+
+    const filter = btn.getAttribute("data-filter");
+
+    filterCards.forEach(function (card) {
+      const matches =
+        filter === "all" || card.getAttribute("data-category") === filter;
+      card.classList.toggle("hidden", !matches);
+    });
+  });
+});
+
+/* ---------------------------------------------------------
    5. ANIMATED STAT COUNTERS (Home page)
    Each stat number carries a data-target (the final value)
    and an optional data-suffix (e.g. "+" or "%"). An

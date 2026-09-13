@@ -59,7 +59,20 @@
       </div>
     </section>
     <main>
-      <div class="card-grid"></div>
+      <div class="container">
+        <!-- Filter buttons: each button's data-filter is matched against
+           every card's data-category in js/script.js -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="chest">Chest</button>
+          <button class="filter-btn" data-filter="back">Back</button>
+          <button class="filter-btn" data-filter="legs">Legs</button>
+          <button class="filter-btn" data-filter="arms">Arms</button>
+          <button class="filter-btn" data-filter="core">Core</button>
+          <button class="filter-btn" data-filter="cardio">Cardio</button>
+        </div>
+        <div class="card-grid"></div>
+      </div>
     </main>
     <!-- ===== Footer ===== -->
     <footer class="site-footer">

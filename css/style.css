@@ -332,6 +332,25 @@ p { color: var(--ink-soft); }
 .card-details p { font-size: 0.9rem; margin-bottom: 0; }
 
 /* =========================================================
+   FILTER BAR
+   ========================================================= */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 2.5rem;
+}
+.filter-btn {
+  padding: 0.55rem 1.2rem;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.filter-btn.active { background: var(--ink); color: var(--paper); }
+.card.hidden { display: none; }
+
+/* =========================================================
    PAGE BANNER (Exercises / Meals / About / Contact)
    ========================================================= */
 .page-banner {

@@ -133,3 +133,33 @@ p { color: var(--ink-soft); }
   z-index: 999;
 }
 .nav-overlay.active { display: block; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer { background: var(--ink); color: var(--stone-light); padding: 3.5rem 0 0; }
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+}
+.footer-brand .logo { display: inline-block; margin-bottom: 0.6rem; }
+.footer-brand p { color: var(--stone-light); font-size: 0.92rem; max-width: 28ch; }
+.footer-col h4 { color: var(--paper); font-family: var(--font-body); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem; }
+.footer-col ul li { margin-bottom: 0.55rem; font-size: 0.92rem; }
+.footer-col a:hover { color: var(--brass); }
+.social-icons { display: flex; gap: 0.9rem; }
+.social-icons a {
+  width: 36px; height: 36px;
+  border: 1px solid var(--stone);
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color var(--transition), color var(--transition);
+}
+.social-icons a:hover { border-color: var(--brass); color: var(--brass); }
+.footer-bottom {
+  text-align: center;
+  padding: 1.2rem 0;
+  border-top: 1px solid rgba(237,228,211,0.15);
+  font-size: 0.85rem;
+}

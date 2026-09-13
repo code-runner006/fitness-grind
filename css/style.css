@@ -68,3 +68,68 @@ h3 { font-size: 1.35rem; }
 h4 { font-size: 1rem; }
 
 p { color: var(--ink-soft); }
+
+/* =========================================================
+   HEADER + NAVIGATION
+   ========================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--ink);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.5rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  color: var(--paper);
+}
+.logo span { color: var(--rust); }
+
+.main-nav ul { display: flex; gap: 2rem; }
+
+.nav-link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--stone-light);
+  padding: 0.3rem 0;
+  transition: color var(--transition);
+}
+.nav-link:hover,
+.nav-link.active { color: var(--brass); }
+
+/* Hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 28px;
+  z-index: 1100;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: var(--paper);
+  transition: transform var(--transition), opacity var(--transition);
+}
+.hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 999;
+}
+.nav-overlay.active { display: block; }

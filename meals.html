@@ -46,7 +46,850 @@
       </div>
     </header>
     <div class="nav-overlay" id="navOverlay"></div>
-    <main></main>
+
+    <!-- ===== Page Banner ===== -->
+    <section class="page-banner">
+      <div class="container">
+        <h1>Meals</h1>
+        <p>
+          Filter by meal type, then open any card to see the full macro
+          breakdown.
+        </p>
+      </div>
+    </section>
+
+    <main>
+      <!-- Quick-reference table: satisfies the "use tables where relevant"
+       requirement and gives a fast at-a-glance comparison. -->
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <h2>Quick reference</h2>
+            <p>All twelve meals at a glance. Grams shown are per serving.</p>
+          </div>
+          <div class="table-wrap">
+            <table class="ref-table">
+              <thead>
+                <tr>
+                  <th>Meal</th>
+                  <th>Category</th>
+                  <th>Calories</th>
+                  <th>Protein</th>
+                  <th>Carbs</th>
+                  <th>Fat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Protein Oats with Berries</td>
+                  <td>Breakfast</td>
+                  <td>350 kcal</td>
+                  <td>28g</td>
+                  <td>45g</td>
+                  <td>8g</td>
+                </tr>
+                <tr>
+                  <td>Greek Yogurt Parfait</td>
+                  <td>Breakfast</td>
+                  <td>280 kcal</td>
+                  <td>22g</td>
+                  <td>32g</td>
+                  <td>6g</td>
+                </tr>
+                <tr>
+                  <td>Veggie Egg Omelette</td>
+                  <td>Breakfast</td>
+                  <td>320 kcal</td>
+                  <td>26g</td>
+                  <td>10g</td>
+                  <td>20g</td>
+                </tr>
+                <tr>
+                  <td>Grilled Chicken Salad</td>
+                  <td>Lunch</td>
+                  <td>420 kcal</td>
+                  <td>40g</td>
+                  <td>25g</td>
+                  <td>16g</td>
+                </tr>
+                <tr>
+                  <td>Quinoa Power Bowl</td>
+                  <td>Lunch</td>
+                  <td>480 kcal</td>
+                  <td>22g</td>
+                  <td>60g</td>
+                  <td>14g</td>
+                </tr>
+                <tr>
+                  <td>Turkey &amp; Avocado Wrap</td>
+                  <td>Lunch</td>
+                  <td>450 kcal</td>
+                  <td>32g</td>
+                  <td>40g</td>
+                  <td>18g</td>
+                </tr>
+                <tr>
+                  <td>Baked Salmon &amp; Veggies</td>
+                  <td>Dinner</td>
+                  <td>500 kcal</td>
+                  <td>38g</td>
+                  <td>20g</td>
+                  <td>28g</td>
+                </tr>
+                <tr>
+                  <td>Lean Steak &amp; Sweet Potato</td>
+                  <td>Dinner</td>
+                  <td>550 kcal</td>
+                  <td>42g</td>
+                  <td>45g</td>
+                  <td>18g</td>
+                </tr>
+                <tr>
+                  <td>Chicken Stir-Fry</td>
+                  <td>Dinner</td>
+                  <td>460 kcal</td>
+                  <td>36g</td>
+                  <td>42g</td>
+                  <td>14g</td>
+                </tr>
+                <tr>
+                  <td>Protein Shake</td>
+                  <td>Snack</td>
+                  <td>200 kcal</td>
+                  <td>25g</td>
+                  <td>15g</td>
+                  <td>4g</td>
+                </tr>
+                <tr>
+                  <td>Almonds &amp; Apple</td>
+                  <td>Snack</td>
+                  <td>220 kcal</td>
+                  <td>6g</td>
+                  <td>24g</td>
+                  <td>12g</td>
+                </tr>
+                <tr>
+                  <td>Cottage Cheese Bowl</td>
+                  <td>Snack</td>
+                  <td>180 kcal</td>
+                  <td>20g</td>
+                  <td>10g</td>
+                  <td>6g</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Filterable card grid with expandable macro bars -->
+      <section class="bg-alt">
+        <div class="container">
+          <div class="section-head">
+            <h2>Browse meals</h2>
+            <p>Open a card to see its macro split visualised as a bar chart.</p>
+          </div>
+
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="breakfast">
+              Breakfast
+            </button>
+            <button class="filter-btn" data-filter="lunch">Lunch</button>
+            <button class="filter-btn" data-filter="dinner">Dinner</button>
+            <button class="filter-btn" data-filter="snack">Snacks</button>
+          </div>
+
+          <div class="card-grid">
+            <!-- 1 -->
+            <article
+              class="card"
+              data-category="breakfast"
+              data-protein="28"
+              data-carbs="45"
+              data-fat="8"
+            >
+              <div class="card-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvWeV11UsfO5KhTGTDwRWr1A6mClOynZXpGE6a4pCGhXABNAfpf3EaChg&s=10"
+                  alt="Bowl of protein oats with berries"
+                />
+                <span class="card-stamp">Breakfast</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Protein Oats with Berries</h3>
+                <p class="card-meta">350 kcal</p>
+                <p class="card-text">
+                  Rolled oats, whey protein, mixed berries, a drizzle of honey.
+                </p>
+                <button class="details-toggle">
+                  View macros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="card-details">
+                  <div class="macro-bars">
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Protein</span
+                        ><span class="macro-value protein">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill protein"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Carbs</span
+                        ><span class="macro-value carbs">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill carbs"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Fat</span><span class="macro-value fat">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2 -->
+            <article
+              class="card"
+              data-category="breakfast"
+              data-protein="22"
+              data-carbs="32"
+              data-fat="6"
+            >
+              <div class="card-image">
+                <img
+                  src="https://www.allrecipes.com/thmb/PT8spc1dL0IxCU5wwtkdeUTzblM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/273916greek-yogurt-breakfast-parfaitKim4x3-9a7099bd11644bebb23a78222a616f44.jpg"
+                  alt="Greek yogurt parfait"
+                />
+                <span class="card-stamp">Breakfast</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Greek Yogurt Parfait</h3>
+                <p class="card-meta">280 kcal</p>
+                <p class="card-text">
+                  Greek yogurt layered with granola and fresh fruit.
+                </p>
+                <button class="details-toggle">
+                  View macros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="card-details">
+                  <div class="macro-bars">
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Protein</span
+                        ><span class="macro-value protein">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill protein"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Carbs</span
+                        ><span class="macro-value carbs">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill carbs"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Fat</span><span class="macro-value fat">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3 -->
+            <article
+              class="card"
+              data-category="breakfast"
+              data-protein="26"
+              data-carbs="10"
+              data-fat="20"
+            >
+              <div class="card-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvKWw_wilB5BwVLpQ3ZxVaqvjDkihy6ZZE5Ul1hTJQTjIZNgXIKKOgJxo&s=10"
+                  alt="Veggie egg omelette"
+                />
+                <span class="card-stamp">Breakfast</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Veggie Egg Omelette</h3>
+                <p class="card-meta">320 kcal</p>
+                <p class="card-text">
+                  Eggs with peppers, spinach and onion, cooked in olive oil.
+                </p>
+                <button class="details-toggle">
+                  View macros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="card-details">
+                  <div class="macro-bars">
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Protein</span
+                        ><span class="macro-value protein">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill protein"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Carbs</span
+                        ><span class="macro-value carbs">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill carbs"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Fat</span><span class="macro-value fat">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4 -->
+            <article
+              class="card"
+              data-category="lunch"
+              data-protein="40"
+              data-carbs="25"
+              data-fat="16"
+            >
+              <div class="card-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDa-QaQU3dFL-JMmVL5rNanu2YEJZhVqY771TP4Q0Ytraox8FZM40zmLw&s=10"
+                  alt="Grilled chicken salad"
+                />
+                <span class="card-stamp">Lunch</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Grilled Chicken Salad</h3>
+                <p class="card-meta">420 kcal</p>
+                <p class="card-text">
+                  Grilled chicken breast over greens with olive oil dressing.
+                </p>
+                <button class="details-toggle">
+                  View macros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="card-details">
+                  <div class="macro-bars">
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Protein</span
+                        ><span class="macro-value protein">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill protein"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Carbs</span
+                        ><span class="macro-value carbs">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill carbs"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Fat</span><span class="macro-value fat">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 5 -->
+            <article
+              class="card"
+              data-category="lunch"
+              data-protein="22"
+              data-carbs="60"
+              data-fat="14"
+            >
+              <div class="card-image">
+                <img
+                  src="https://choosingchia.com/jessh-jessh/uploads/2020/03/Quinoa-power-bowls-2.jpg"
+                  alt="Quinoa power bowl"
+                />
+                <span class="card-stamp">Lunch</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Quinoa Power Bowl</h3>
+                <p class="card-meta">480 kcal</p>
+                <p class="card-text">
+                  Quinoa, chickpeas, roasted vegetables and tahini dressing.
+                </p>
+                <button class="details-toggle">
+                  View macros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="card-details">
+                  <div class="macro-bars">
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Protein</span
+                        ><span class="macro-value protein">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill protein"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Carbs</span
+                        ><span class="macro-value carbs">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill carbs"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Fat</span><span class="macro-value fat">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 6 -->
+            <article
+              class="card"
+              data-category="lunch"
+              data-protein="32"
+              data-carbs="40"
+              data-fat="18"
+            >
+              <div class="card-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTJLHF6iJ4aXJ029nFzId021DpSi_v4jIFOvWFiXGQtpFUareoeQ3OnjA&s=10"
+                  alt="Turkey and avocado wrap"
+                />
+                <span class="card-stamp">Lunch</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Turkey &amp; Avocado Wrap</h3>
+                <p class="card-meta">450 kcal</p>
+                <p class="card-text">
+                  Sliced turkey, avocado and greens in a whole-wheat wrap.
+                </p>
+                <button class="details-toggle">
+                  View macros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="card-details">
+                  <div class="macro-bars">
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Protein</span
+                        ><span class="macro-value protein">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill protein"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Carbs</span
+                        ><span class="macro-value carbs">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill carbs"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Fat</span><span class="macro-value fat">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 7 -->
+            <article
+              class="card"
+              data-category="dinner"
+              data-protein="38"
+              data-carbs="20"
+              data-fat="28"
+            >
+              <div class="card-image">
+                <img
+                  src="https://www.recipetineats.com/tachyon/2024/02/Lemon-garlic-salmon-tray-bake_1.jpg"
+                  alt="Baked salmon with vegetables"
+                />
+                <span class="card-stamp">Dinner</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Baked Salmon &amp; Veggies</h3>
+                <p class="card-meta">500 kcal</p>
+                <p class="card-text">
+                  Oven-baked salmon fillet with roasted seasonal vegetables.
+                </p>
+                <button class="details-toggle">
+                  View macros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="card-details">
+                  <div class="macro-bars">
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Protein</span
+                        ><span class="macro-value protein">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill protein"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Carbs</span
+                        ><span class="macro-value carbs">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill carbs"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Fat</span><span class="macro-value fat">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 8 -->
+            <article
+              class="card"
+              data-category="dinner"
+              data-protein="42"
+              data-carbs="45"
+              data-fat="18"
+            >
+              <div class="card-image">
+                <img
+                  src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/9/23/2/FNM_110114-Steak-with-Sweet-Potatoes-Recipe_s4x3.jpg.rend.hgtvcom.1280.1280.suffix/1412604864009.webp"
+                  alt="Lean steak with sweet potato"
+                />
+                <span class="card-stamp">Dinner</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Lean Steak &amp; Sweet Potato</h3>
+                <p class="card-meta">550 kcal</p>
+                <p class="card-text">
+                  Grilled lean steak with roasted sweet potato and greens.
+                </p>
+                <button class="details-toggle">
+                  View macros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="card-details">
+                  <div class="macro-bars">
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Protein</span
+                        ><span class="macro-value protein">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill protein"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Carbs</span
+                        ><span class="macro-value carbs">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill carbs"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Fat</span><span class="macro-value fat">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 9 -->
+            <article
+              class="card"
+              data-category="dinner"
+              data-protein="36"
+              data-carbs="42"
+              data-fat="14"
+            >
+              <div class="card-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO2sqyb6gDrb0YH-LGs4fZMS0WGpR20ey4coaw8qfSW2N-cduxKZaGBPfI&s=10"
+                  alt="Chicken stir-fry"
+                />
+                <span class="card-stamp">Dinner</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Chicken Stir-Fry</h3>
+                <p class="card-meta">460 kcal</p>
+                <p class="card-text">
+                  Chicken breast with mixed vegetables and rice, stir-fried in a
+                  light sauce.
+                </p>
+                <button class="details-toggle">
+                  View macros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="card-details">
+                  <div class="macro-bars">
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Protein</span
+                        ><span class="macro-value protein">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill protein"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Carbs</span
+                        ><span class="macro-value carbs">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill carbs"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Fat</span><span class="macro-value fat">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 10 -->
+            <article
+              class="card"
+              data-category="snack"
+              data-protein="25"
+              data-carbs="15"
+              data-fat="4"
+            >
+              <div class="card-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjCp6dvbfRqjvJ6z_XHf5lqPI9ez756Tp8DAoimnt_dIEDBuNAda2USVZi&s=10"
+                  alt="Protein shake"
+                />
+                <span class="card-stamp">Snack</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Protein Shake</h3>
+                <p class="card-meta">200 kcal</p>
+                <p class="card-text">
+                  Whey protein blended with milk and a banana.
+                </p>
+                <button class="details-toggle">
+                  View macros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="card-details">
+                  <div class="macro-bars">
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Protein</span
+                        ><span class="macro-value protein">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill protein"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Carbs</span
+                        ><span class="macro-value carbs">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill carbs"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Fat</span><span class="macro-value fat">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 11 -->
+            <article
+              class="card"
+              data-category="snack"
+              data-protein="6"
+              data-carbs="24"
+              data-fat="12"
+            >
+              <div class="card-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnG0nZh4QRRX-xN5NAgsB3dePNzUz36LUlSoH_-YLgLA&s=10"
+                  alt="Almonds and apple slices"
+                />
+                <span class="card-stamp">Snack</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Almonds &amp; Apple</h3>
+                <p class="card-meta">220 kcal</p>
+                <p class="card-text">
+                  A handful of raw almonds with a sliced apple.
+                </p>
+                <button class="details-toggle">
+                  View macros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="card-details">
+                  <div class="macro-bars">
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Protein</span
+                        ><span class="macro-value protein">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill protein"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Carbs</span
+                        ><span class="macro-value carbs">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill carbs"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Fat</span><span class="macro-value fat">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 12 -->
+            <article
+              class="card"
+              data-category="snack"
+              data-protein="20"
+              data-carbs="10"
+              data-fat="6"
+            >
+              <div class="card-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTG-Wr_T_G0i75KouRxulJ71Ty0t563ZTLyDirFQGIDc5vocfkEpE3_RtW&s=10"
+                  alt="Cottage cheese bowl"
+                />
+                <span class="card-stamp">Snack</span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Cottage Cheese Bowl</h3>
+                <p class="card-meta">180 kcal</p>
+                <p class="card-text">
+                  Cottage cheese topped with cinnamon and a few berries.
+                </p>
+                <button class="details-toggle">
+                  View macros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="card-details">
+                  <div class="macro-bars">
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Protein</span
+                        ><span class="macro-value protein">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill protein"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Carbs</span
+                        ><span class="macro-value carbs">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill carbs"></div>
+                      </div>
+                    </div>
+                    <div class="macro-bar">
+                      <div class="macro-bar-label">
+                        <span>Fat</span><span class="macro-value fat">-</span>
+                      </div>
+                      <div class="macro-bar-track">
+                        <div class="macro-bar-fill fat"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <!-- ===== Footer ===== -->
     <footer class="site-footer">
       <div class="container footer-inner">

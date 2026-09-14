@@ -83,6 +83,51 @@ document.querySelectorAll(".details-toggle").forEach(function (toggle) {
 });
 
 /* ---------------------------------------------------------
+   4. MACRO BAR CALCULATION (Meals page)
+   Each meal card stores its macros in grams as data
+   attributes: data-protein, data-carbs, data-fat.
+   Protein and carbs supply 4 calories per gram, fat
+   supplies 9 calories per gram. We convert each macro to
+   calories, then work out what percentage of the meal's
+   total calories each macro represents, and use that
+   percentage to set the width of its bar.
+--------------------------------------------------------- */
+function initMacroBars() {
+  document.querySelectorAll(".card[data-protein]").forEach(function (card) {
+    const protein = parseFloat(card.getAttribute("data-protein"));
+    const carbs = parseFloat(card.getAttribute("data-carbs"));
+    const fat = parseFloat(card.getAttribute("data-fat"));
+
+    const proteinCals = protein * 4;
+    const carbsCals = carbs * 4;
+    const fatCals = fat * 9;
+    const totalCals = proteinCals + carbsCals + fatCals;
+
+    const proteinPct = Math.round((proteinCals / totalCals) * 100);
+    const carbsPct = Math.round((carbsCals / totalCals) * 100);
+    const fatPct = Math.round((fatCals / totalCals) * 100);
+
+    const proteinBar = card.querySelector(".macro-bar-fill.protein");
+    const carbsBar = card.querySelector(".macro-bar-fill.carbs");
+    const fatBar = card.querySelector(".macro-bar-fill.fat");
+
+    const proteinVal = card.querySelector(".macro-value.protein");
+    const carbsVal = card.querySelector(".macro-value.carbs");
+    const fatVal = card.querySelector(".macro-value.fat");
+
+    if (proteinBar) proteinBar.style.width = proteinPct + "%";
+    if (carbsBar) carbsBar.style.width = carbsPct + "%";
+    if (fatBar) fatBar.style.width = fatPct + "%";
+
+    if (proteinVal)
+      proteinVal.textContent = protein + "g (" + proteinPct + "%)";
+    if (carbsVal) carbsVal.textContent = carbs + "g (" + carbsPct + "%)";
+    if (fatVal) fatVal.textContent = fat + "g (" + fatPct + "%)";
+  });
+}
+initMacroBars();
+
+/* ---------------------------------------------------------
    5. ANIMATED STAT COUNTERS (Home page)
    Each stat number carries a data-target (the final value)
    and an optional data-suffix (e.g. "+" or "%"). An

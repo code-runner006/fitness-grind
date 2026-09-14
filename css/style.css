@@ -399,6 +399,44 @@ p { color: var(--ink-soft); }
 .page-banner h1 { color: var(--paper); margin-bottom: 0.5rem; }
 .page-banner p { color: var(--stone-light); max-width: 520px; margin: 0; }
 
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+.mission-text { max-width: 68ch; font-size: 1.05rem; }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.step-item { border-top: 3px solid var(--brass); padding-top: 1.2rem; }
+.step-number {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--brass);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.faq-list { max-width: 760px; }
+.faq-item { border-bottom: 2px solid var(--ink); }
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.faq-question i { color: var(--rust); flex-shrink: 0; transition: transform var(--transition); }
+.faq-item.active .faq-question i { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-item.active .faq-answer { max-height: 240px; padding-bottom: 1.2rem; }
+.faq-answer p { font-size: 0.95rem; margin: 0; max-width: 65ch; }
 
 /* =========================================================
    FOOTER

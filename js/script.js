@@ -173,3 +173,21 @@ if (statNumbers.length) {
     counterObserver.observe(num);
   });
 }
+
+/* ---------------------------------------------------------
+   6. FAQ ACCORDION (About page)
+   Only one FAQ item stays open at a time: opening one
+   closes any other that was previously open.
+--------------------------------------------------------- */
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(function (item) {
+  const question = item.querySelector(".faq-question");
+  question.addEventListener("click", function () {
+    const wasActive = item.classList.contains("active");
+    faqItems.forEach(function (i) {
+      i.classList.remove("active");
+    });
+    if (!wasActive) item.classList.add("active");
+  });
+});

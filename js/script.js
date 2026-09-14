@@ -191,3 +191,71 @@ faqItems.forEach(function (item) {
     if (!wasActive) item.classList.add("active");
   });
 });
+
+/* ---------------------------------------------------------
+   7. CONTACT FORM VALIDATION
+   Runs on submit. Prevents the default page reload (there
+   is no backend to send the form to), checks each field,
+   and shows an inline error message under any invalid
+   field. If every field passes, a success banner is shown
+   and the form is cleared.
+--------------------------------------------------------- */
+const contactForm = document.getElementById("contactForm");
+
+function validateField(field, condition, message) {
+  const group = field.closest(".form-group");
+  const errorEl = group.querySelector(".error-message");
+  if (!condition) {
+    group.classList.add("error");
+    errorEl.textContent = message;
+    return false;
+  }
+  group.classList.remove("error");
+  return true;
+}
+
+function isValidEmail(value) {
+  const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return pattern.test(value);
+}
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const subject = document.getElementById("subject");
+    const message = document.getElementById("message");
+
+    const nameOk = validateField(
+      name,
+      name.value.trim().length >= 2,
+      "Please enter your full name.",
+    );
+    const emailOk = validateField(
+      email,
+      isValidEmail(email.value.trim()),
+      "Please enter a valid email address.",
+    );
+    const subjectOk = validateField(
+      subject,
+      subject.value !== "",
+      "Please choose a subject.",
+    );
+    const messageOk = validateField(
+      message,
+      message.value.trim().length >= 10,
+      "Message should be at least 10 characters.",
+    );
+
+    if (nameOk && emailOk && subjectOk && messageOk) {
+      const successBanner = document.getElementById("formSuccess");
+      successBanner.classList.add("show");
+      contactForm.reset();
+      setTimeout(function () {
+        successBanner.classList.remove("show");
+      }, 5000);
+    }
+  });
+}
